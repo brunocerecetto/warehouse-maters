@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Local Claude Code / GSD installation (vendored framework + local settings)
+.claude/
+
+# Unity (placeholder — fill in when project is bootstrapped)
+# Library/
+# Temp/
+# Obj/
+# Build/
+# Builds/
+# Logs/
+# UserSettings/
+# *.csproj
+# *.sln
