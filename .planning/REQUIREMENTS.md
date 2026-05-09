@@ -117,40 +117,40 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BOOT-01 | TBD | Pending |
-| BOOT-02 | TBD | Pending |
-| MOVE-01 | TBD | Pending |
-| MOVE-02 | TBD | Pending |
-| BOX-01 | TBD | Pending |
-| BOX-02 | TBD | Pending |
-| BOX-03 | TBD | Pending |
-| BOX-04 | TBD | Pending |
-| ORD-01 | TBD | Pending |
-| ORD-02 | TBD | Pending |
-| ORD-03 | TBD | Pending |
-| ORD-04 | TBD | Pending |
-| ECON-01 | TBD | Pending |
-| ECON-02 | TBD | Pending |
-| ECON-03 | TBD | Pending |
-| ECON-04 | TBD | Pending |
-| ECON-05 | TBD | Pending |
-| ECON-06 | TBD | Pending |
-| ECON-07 | TBD | Pending |
-| WORK-01 | TBD | Pending |
-| WORK-02 | TBD | Pending |
-| TUT-01 | TBD | Pending |
-| TUT-02 | TBD | Pending |
-| SAVE-01 | TBD | Pending |
-| TEL-01 | TBD | Pending |
-| TEL-02 | TBD | Pending |
-| ADS-01 | TBD | Pending |
-| ADS-02 | TBD | Pending |
-| BUILD-01 | TBD | Pending |
+| BOOT-01 | Phase 1 | Pending |
+| BOOT-02 | Phase 1 | Pending |
+| MOVE-01 | Phase 2 | Pending |
+| MOVE-02 | Phase 2 | Pending |
+| BOX-01 | Phase 3 | Pending |
+| BOX-02 | Phase 3 | Pending |
+| BOX-04 | Phase 3 | Pending |
+| BOX-03 | Phase 4 | Pending |
+| ORD-01 | Phase 4 | Pending |
+| ORD-02 | Phase 4 | Pending |
+| ORD-03 | Phase 4 | Pending |
+| ORD-04 | Phase 4 | Pending |
+| ECON-01 | Phase 4 | Pending |
+| ECON-02 | Phase 5 | Pending |
+| ECON-03 | Phase 5 | Pending |
+| ECON-04 | Phase 5 | Pending |
+| ECON-05 | Phase 5 | Pending |
+| ECON-06 | Phase 5 | Pending |
+| ECON-07 | Phase 5 | Pending |
+| SAVE-01 | Phase 6 | Pending |
+| WORK-01 | Phase 7 | Pending |
+| WORK-02 | Phase 7 | Pending |
+| TUT-01 | Phase 8 | Pending |
+| TUT-02 | Phase 8 | Pending |
+| TEL-01 | Phase 9 | Pending |
+| TEL-02 | Phase 9 | Pending |
+| ADS-01 | Phase 10 | Pending |
+| ADS-02 | Phase 10 | Pending |
+| BUILD-01 | Phase 11 | Pending |
 
 **Coverage:**
 - v1 requirements: 29 total
-- Mapped to phases: 0
-- Unmapped: 29 (will be resolved by roadmap)
+- Mapped to phases: 29
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-09*
