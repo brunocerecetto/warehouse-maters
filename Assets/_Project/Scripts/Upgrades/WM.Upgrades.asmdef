@@ -1,0 +1,14 @@
+{
+    "name": "WM.Upgrades",
+    "rootNamespace": "WM.Upgrades",
+    "references": ["WM.Core", "WM.Economy"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
