@@ -29,12 +29,12 @@ Vertical-MVP slice plan that drives Warehouse Master from an empty Unity repo to
   1. Opening the project in Unity Editor loads the `Warehouse_MVP` scene with all required objects positioned (loading dock, packing station, delivery zone, upgrade station, shelf area, worker spawn, camera rig, UI canvas, event system, GameManager)
   2. Folder structure under `Assets/_Project/` matches the architecture spec, with assembly definitions per system folder
   3. A debug iOS build runs on simulator/device and shows the empty warehouse scene from the configured camera
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Initialize Unity project (iOS target, URP, `_Project/` folders, asmdefs)
-- [ ] 01-02: Lay out `Warehouse_MVP` scene with placeholder geometry and required GameObjects
-- [ ] 01-03: Configure camera rig and basic UI canvas
+- [ ] 01-01-PLAN.md — Initialize Unity 6.3.7f1 project, pin Cinemachine/Input System/Test Framework packages, create _Project/ folder tree, all 13 production asmdefs + 2 test asmdefs, service interfaces and Null* stubs in WM.Core, BuildScript.BuildIOS skeleton, .gitignore + .gitattributes, Wave-0 BootstrapStructureTests
+- [ ] 01-02-PLAN.md — Compose Warehouse_MVP scene with 12 required GameObjects (Player, LoadingDock, PackingStation, DeliveryZone, UpgradeStation, ShelfArea, WorkerSpawn, CameraRig, UICanvas, EventSystem, GameManager, Bootstrap), placeholder URP/Lit materials, Bootstrap-GameManager composition root wiring, register scene in Build Settings, BootstrapSmokeTests + PlayModeSmokeTests
+- [ ] 01-03-PLAN.md — Configure Cinemachine 3.x camera rig (CinemachineBrain + passive CinemachineCamera at isometric pose), Screen-Space Camera UICanvas (1080x1920, Match=0.5) with SafeAreaPanel, EventSystem with InputSystemUIInputModule, extend BootstrapSmokeTests with Cinemachine/UICanvas/EventSystem assertions
 
 ### Phase 2: Walk Around the Warehouse
 **Goal**: Player can drag a virtual joystick and walk the character around the warehouse, blocked by walls and stations.
