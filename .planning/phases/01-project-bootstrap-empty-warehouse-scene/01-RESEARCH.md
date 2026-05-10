@@ -951,12 +951,12 @@ Phase 1 has no runtime authentication, no data persistence, no network, no crypt
 
 **Missing dependencies with fallback:** None.
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **D-20 conflict: `.unity`/`.prefab`/`.asset` in LFS or yaml-merged?**
-   - What we know: D-20 lists them as LFS. Best-practice docs and Unity's own merge tooling expect them as YAML text with `merge=unityyamlmerge`.
-   - What's unclear: Whether the user wants strict D-20 compliance or the best-practice variant.
-   - Recommendation: Planner surfaces this as an explicit confirmation in the plan-check step. Default to best-practice (yaml-merged for those three; LFS only for `LightingData.asset`, `*TerrainData.asset`, `NavMeshData.asset`, and binary media files).
+1. **[RESOLVED 2026-05-10] D-20 conflict: `.unity`/`.prefab`/`.asset` in LFS or yaml-merged?**
+   - **Resolution:** User approved the deviation from D-20 verbatim. `.unity`, `.prefab`, generic `.asset` stay as YAML text with `merge=unityyamlmerge`. LFS tracks only true binaries (`.psd`, `.fbx`, `.png`, `.jpg`, `.wav`, `.mp3`, `.ogg`) plus three special assets (`LightingData.asset`, `*TerrainData.asset`, `NavMeshData.asset`).
+   - **Rationale:** LFS-tracked YAML breaks `unityyamlmerge` and removes PR diffs. Best practice across Unity community + official tooling expects YAML text + merge driver for scenes/prefabs.
+   - **Effect on D-20:** Plan 01-01 `.gitattributes` content reflects this resolution. CONTEXT.md D-20 is amended in spirit (binaries-only) without rewriting the locked-decision text — deviation documented in 01-SKELETON.md and 01-01 plan rationale.
 
 2. **Should `BuildScript` exist as `WM.Editor.BuildScript` or namespaceless `BuildScript`?**
    - What we know: CLAUDE.md examples write `BuildScript.BuildIOS` without namespace.
