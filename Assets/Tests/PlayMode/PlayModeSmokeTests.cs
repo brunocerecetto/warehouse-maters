@@ -1,19 +1,36 @@
-// Source: VALIDATION.md Wave 0 row 01-02-* + RESEARCH Code Examples (PlayMode smoke).
-// Plan 01-02 will append a Scene_Loads_GameManagerInitializes test that opens Warehouse_MVP.unity.
-// In Phase 1 wave 1 we ship a trivial passing test so the PlayMode CLI returns exit 0.
+// Source: VALIDATION.md row 01-02-* + RESEARCH §PlayMode smoke test code example.
+// Covers BOOT-02 runtime gate — scene loads at runtime AND GameManager logs init line.
+using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TestTools;
+using WM.Core;
 
 namespace WM.Tests.PlayMode
 {
     public class PlayModeSmokeTests
     {
-        [Test]
-        public void PlayModeAssembly_Compiles()
+        [UnityTest]
+        public IEnumerator Scene_Loads_GameManagerInitializes()
         {
-            // Trivial assertion proves the test assembly was built and is runnable.
-            // Real scene-load smoke test is added in plan 01-02 once Warehouse_MVP.unity exists.
-            Assert.That(Application.isPlaying || !Application.isPlaying, Is.True);
+            // Scene must be in Build Settings for SceneManager.LoadSceneAsync to find it.
+            // Plan 01-02 Task 3 Step F adds Warehouse_MVP.unity to EditorBuildSettings.
+            LogAssert.Expect(LogType.Log, "GameManager initialized");
+
+            yield return SceneManager.LoadSceneAsync("Warehouse_MVP", LoadSceneMode.Single);
+            // Wait one frame for Awake/Start chain to finish.
+            yield return null;
+
+            GameObject gm = GameObject.Find("GameManager");
+            Assert.That(gm, Is.Not.Null, "GameManager GameObject not found in loaded scene");
+            Assert.That(gm.GetComponent<GameManager>(), Is.Not.Null,
+                "GameObject 'GameManager' is missing the WM.Core.GameManager component");
+
+            GameObject bootstrap = GameObject.Find("Bootstrap");
+            Assert.That(bootstrap, Is.Not.Null, "Bootstrap GameObject not found");
+            Assert.That(bootstrap.GetComponent<Bootstrap>(), Is.Not.Null,
+                "GameObject 'Bootstrap' is missing the WM.Core.Bootstrap component");
         }
     }
 }
