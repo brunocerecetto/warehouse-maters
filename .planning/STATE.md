@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Plan 01-02 complete — Warehouse_MVP scene + BOOT-02 covered; ready for plan 01-03 (camera + UI canvas)
-last_updated: "2026-05-10T22:15:00Z"
-last_activity: 2026-05-10 -- Plan 01-02 complete (BOOT-02 covered; commits 2a4029d, 33e3527, 788bd5c, 0e7215f)
+status: verifying
+stopped_at: Plan 01-03 complete — Cinemachine rig + UICanvas + EventSystem wired; Phase 1 walking skeleton end-state ready for verifier
+last_updated: "2026-05-11T09:06:58.677Z"
+last_activity: 2026-05-11
 progress:
   total_phases: 11
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
-  percent: 67
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
@@ -27,10 +27,10 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 
 Phase: 01 (project-bootstrap-empty-warehouse-scene) — EXECUTING
 Plan: 3 of 3 (next: 01-03 Camera + UI canvas)
-Status: Plan 01-02 complete; ready to start plan 01-03
-Last activity: 2026-05-10 -- Plan 01-02 complete (BOOT-02 covered; commits 2a4029d, 33e3527, 788bd5c, 0e7215f)
+Status: Phase complete — ready for verification
+Last activity: 2026-05-11
 
-Progress: [███████░░░] 67%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Progress: [███████░░░] 67%
 
 *Updated after each plan completion*
 | Phase 01-project-bootstrap-empty-warehouse-scene P02-warehouse-scene-layout | 68min | 4 tasks | 22 files |
+| Phase 01-project-bootstrap-empty-warehouse-scene P03-camera-and-ui-canvas | 9min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,8 @@ Recent decisions affecting current work:
 - 2026-05-10 (Plan 01-01): `Assets/Settings/` template leftover retained — `DefaultVolumeProfile.asset` referenced by URPGlobalSettings; deletion would break URP
 - 2026-05-10 (Phase 1 / Plan 01-02): D-22 NEW — `WM.Editor.Phase01SceneBuilder` kept committed as Editor-only static method + `[MenuItem]`. Headless scene authoring via `-executeMethod` is reproducible across fresh clones; alternative (hand-author 1440-line YAML) rejected as fragile.
 - 2026-05-10 (Phase 1 / Plan 01-02): D-23 NEW — Material URP/Lit verification switched from string-grep to GUID-grep (URP/Lit GUID `933532a4fcc9baf4fa0491de14d08ed7`). Unity serializes shader refs by GUID, not display name; the plan's original grep gate was incorrect. URP/Lit GUID stable across URP 17.x in Unity 6.x.
+- [Phase 01]: D-24: Cinemachine 3.1.6 Lens YAML key is 'Lens:' (NOT 'm_Lens:'). ModeOverride serializes as int enum (Perspective=2). — Confirmed against Library/PackageCache CinemachineCamera.cs:65 'public LensSettings Lens = LensSettings.Default'. Plan 01-03 verify pattern corrected.
+- [Phase 01]: D-25: Phase01CameraUiBuilder kept as sibling Editor builder to Phase01SceneBuilder (D-22 reaffirmed). — Each builder single-purpose, idempotent, replayable in isolation. Smaller blast radius per builder; cleanup phase can prune either independently.
 
 ### Pending Todos
 
@@ -94,7 +97,7 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-05-10T22:15:00Z
-Stopped at: Plan 01-02 complete — Warehouse_MVP scene + BOOT-02 covered; ready for plan 01-03 (camera + UI canvas)
+Last session: 2026-05-11T09:06:58.671Z
+Stopped at: Plan 01-03 complete — Cinemachine rig + UICanvas + EventSystem wired; Phase 1 walking skeleton end-state ready for verifier
 Resume command: `/gsd:execute-phase 1`
-Resume file: .planning/phases/01-project-bootstrap-empty-warehouse-scene/01-03-camera-and-ui-canvas-PLAN.md
+Resume file: None
