@@ -117,7 +117,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BOOT-01 | Phase 1 | Pending |
+| BOOT-01 | Phase 1 | Complete |
 | BOOT-02 | Phase 1 | Complete |
 | MOVE-01 | Phase 2 | Pending |
 | MOVE-02 | Phase 2 | Pending |
