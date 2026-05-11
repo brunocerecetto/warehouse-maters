@@ -892,7 +892,7 @@ public IEnumerator PlayerCannotPassThroughPerimeterWall()
 | A4 | `WM.Player → WM.UI` asmdef back-reference is acceptable (no circular dep introduced) | Project Structure section | Build break if cyclic. Verified: `WM.UI` references `WM.Core, WM.Economy, WM.Orders, WM.Upgrades` — none reference `WM.Player`. Safe. |
 | A5 | Existing `BootstrapSmokeTests.CinemachineCamera_IsConfigured` will fail after Phase 02 (Follow != null and lens mode change) | Pitfall 2 | Test breakage on first Phase 02 run; remediation already documented (update test in plan task). LOW risk — the test will fail loudly and clearly. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should `Composition.ScreenPosition.y` be -0.10 or -0.20?**
    - What we know: CONTEXT.md D-12 says "player 10–20% below center."

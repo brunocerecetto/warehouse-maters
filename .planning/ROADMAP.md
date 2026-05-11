@@ -45,12 +45,12 @@ Plans:
   1. Touching and dragging the on-screen joystick moves the character in the dragged direction relative to the camera
   2. Releasing the joystick stops the character; collisions with walls/stations prevent passing through
   3. Movement speed reads from a configurable value that can later be modified by upgrades
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Virtual joystick UI component with touch handling
-- [ ] 02-02: `PlayerController` with camera-relative movement and configurable speed
-- [ ] 02-03: Collision setup for walls and stations
+- [ ] 02-01-PLAN.md — Virtual joystick (`VirtualJoystick` UGUI MonoBehaviour anchored bottom-left under SafeAreaPanel, Phase02JoystickBuilder, EditMode VirtualJoystickMathTests)
+- [ ] 02-02-PLAN.md — PlayerController + Cinemachine follow (`PlayerConfig`/`PlayerStats`/`CameraRelativeMotion`/`PlayerController`, Phase02PlayerWiring + Phase02CameraConfigurator builders, Phase 01 Rigidbody fix, BootstrapSmokeTests update, PlayerMovementSmokeTests + CameraFollowSmokeTests)
+- [ ] 02-03-PLAN.md — Collision + camera bounds (Phase02CollisionBuilder for 4 invisible perimeter walls + CameraBounds, CinemachineConfiner3D wiring, StationColliderTests + PlayerCollisionSmokeTests)
 
 ### Phase 3: Pick Up & Carry Boxes
 **Goal**: Boxes spawn at the loading dock; the player auto-picks them up to a capped capacity and carries them as a visible stack.
