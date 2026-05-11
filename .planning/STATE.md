@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: "Phase 01 shipped — PR #1 open"
-stopped_at: Phase 01 shipped via PR #1 (https://github.com/brunocerecetto/warehouse-maters/pull/1) — awaiting review/merge
-last_updated: "2026-05-11T09:57:54.662Z"
-last_activity: "2026-05-11 — Phase 01 shipped via PR #1"
+status: Phase 01 merged — ready for Phase 02
+stopped_at: Plan 01-03 complete — Cinemachine rig + UICanvas + EventSystem wired; Phase 1 walking skeleton end-state ready for verifier
+last_updated: "2026-05-11T09:59:51.110Z"
+last_activity: "2026-05-11 — Phase 01 PR #1 squash-merged to main"
 progress:
   total_phases: 11
   completed_phases: 1
@@ -27,8 +27,8 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 
 Phase: 01 — COMPLETE
 Plan: 3 of 3 (next: Phase 02 — walk-around-the-warehouse)
-Status: Phase 01 shipped — PR #1 open
-Last activity: 2026-05-11 — Phase 01 shipped via PR #1
+Status: Phase 01 merged — ready for Phase 02
+Last activity: 2026-05-11 — Phase 01 PR #1 squash-merged to main
 
 Progress: [██████████] 100%
 
