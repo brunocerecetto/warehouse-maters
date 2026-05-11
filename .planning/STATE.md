@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Phase 01 merged — ready for Phase 02
-stopped_at: Plan 01-03 complete — Cinemachine rig + UICanvas + EventSystem wired; Phase 1 walking skeleton end-state ready for verifier
+stopped_at: Phase 01 merged into main via PR #1 (squash commit 743ffc7). Ready for Phase 02 — walk-around-the-warehouse.
 last_updated: "2026-05-11T09:59:51.110Z"
 last_activity: "2026-05-11 — Phase 01 PR #1 squash-merged to main"
 progress:
