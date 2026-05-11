@@ -10,7 +10,7 @@ Requirements for the MVP prototype. Each maps to roadmap phases.
 ### Bootstrap
 
 - [x] **BOOT-01**: Unity project initialized for iOS with URP and `Assets/_Project/...` folder structure (Scripts subfolders per system, ScriptableObjects subfolders per data type) — Plan 01-01, 2026-05-10
-- [ ] **BOOT-02**: `Warehouse_MVP` scene created with all required objects (player spawn, loading dock, packing station, delivery zone, upgrade station, shelf area, worker spawn, camera rig, UI canvas, event system, `GameManager`)
+- [x] **BOOT-02**: `Warehouse_MVP` scene created with all required objects (player spawn, loading dock, packing station, delivery zone, upgrade station, shelf area, worker spawn, camera rig, UI canvas, event system, `GameManager`) — Plan 01-02, 2026-05-10
 
 ### Movement
 
@@ -118,7 +118,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | BOOT-01 | Phase 1 | Pending |
-| BOOT-02 | Phase 1 | Pending |
+| BOOT-02 | Phase 1 | Complete |
 | MOVE-01 | Phase 2 | Pending |
 | MOVE-02 | Phase 2 | Pending |
 | BOX-01 | Phase 3 | Pending |

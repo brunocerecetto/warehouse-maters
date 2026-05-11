@@ -33,7 +33,7 @@ Vertical-MVP slice plan that drives Warehouse Master from an empty Unity repo to
 
 Plans:
 - [x] 01-01-PLAN.md — Initialize Unity 6000.4.6f1 project (D-21 deviation from 6.3.7f1, user-approved), pin Cinemachine/Input System/Test Framework packages, create _Project/ folder tree, all 13 production asmdefs + 2 test asmdefs, service interfaces and Null* stubs in WM.Core, BuildScript.BuildIOS skeleton, .gitignore + .gitattributes, Wave-0 BootstrapStructureTests — **DONE 2026-05-10** (commits e4ff92d, 1e39427, 1ea5cd7; EditMode 42/42 + PlayMode 1/1 green)
-- [ ] 01-02-PLAN.md — Compose Warehouse_MVP scene with 12 required GameObjects (Player, LoadingDock, PackingStation, DeliveryZone, UpgradeStation, ShelfArea, WorkerSpawn, CameraRig, UICanvas, EventSystem, GameManager, Bootstrap), placeholder URP/Lit materials, Bootstrap-GameManager composition root wiring, register scene in Build Settings, BootstrapSmokeTests + PlayModeSmokeTests
+- [x] 01-02-PLAN.md — Compose Warehouse_MVP scene with 12 required GameObjects (Player, LoadingDock, PackingStation, DeliveryZone, UpgradeStation, ShelfArea, WorkerSpawn, CameraRig, UICanvas, EventSystem, GameManager, Bootstrap), placeholder URP/Lit materials, Bootstrap-GameManager composition root wiring, register scene in Build Settings, BootstrapSmokeTests + PlayModeSmokeTests
 - [ ] 01-03-PLAN.md — Configure Cinemachine 3.x camera rig (CinemachineBrain + passive CinemachineCamera at isometric pose), Screen-Space Camera UICanvas (1080x1920, Match=0.5) with SafeAreaPanel, EventSystem with InputSystemUIInputModule, extend BootstrapSmokeTests with Cinemachine/UICanvas/EventSystem assertions
 
 ### Phase 2: Walk Around the Warehouse

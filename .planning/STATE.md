@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 01 plan 01 complete — Unity project + asmdefs + tests green
-last_updated: "2026-05-10T20:56:48Z"
-last_activity: 2026-05-10 -- Plan 01-01 complete (BOOT-01 covered)
+stopped_at: Plan 01-02 complete — Warehouse_MVP scene + BOOT-02 covered; ready for plan 01-03 (camera + UI canvas)
+last_updated: "2026-05-10T22:15:00Z"
+last_activity: 2026-05-10 -- Plan 01-02 complete (BOOT-02 covered; commits 2a4029d, 33e3527, 788bd5c, 0e7215f)
 progress:
   total_phases: 11
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -26,32 +26,33 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 ## Current Position
 
 Phase: 01 (project-bootstrap-empty-warehouse-scene) — EXECUTING
-Plan: 2 of 3 (next: 01-02 Warehouse_MVP scene composition)
-Status: Plan 01-01 complete; ready to start plan 01-02
-Last activity: 2026-05-10 -- Plan 01-01 complete (BOOT-01 covered; commits e4ff92d, 1e39427, 1ea5cd7)
+Plan: 3 of 3 (next: 01-03 Camera + UI canvas)
+Status: Plan 01-02 complete; ready to start plan 01-03
+Last activity: 2026-05-10 -- Plan 01-02 complete (BOOT-02 covered; commits 2a4029d, 33e3527, 788bd5c, 0e7215f)
 
-Progress: ███░░░░░░░ 33%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 1
-- Average duration: ~15 min (autonomous portion; preceded by orchestrator-led manual Unity Hub + Inspector GUI setup earlier in session)
-- Total execution time: ~15 min autonomous + ~45 min orchestrator-led manual GUI work
+- Total plans completed: 2
+- Average duration: ~42 min ((15 + 68) / 2 across plan 01-01 autonomous portion and plan 01-02 wall-clock)
+- Total execution time: ~83 min autonomous (15 min plan 01-01 + 68 min plan 01-02) + ~45 min orchestrator-led manual GUI work in plan 01-01
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01    | 1/3   | ~15 min (autonomous) | ~15 min |
+| 01    | 2/3   | ~83 min autonomous | ~42 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (15 min autonomous)
-- Trend: First plan complete; baseline established
+- Last 5 plans: 01-01 (15 min autonomous), 01-02 (68 min — included 4 Unity batchmode runs for scene authoring + test suites)
+- Trend: Plans pacing within phase budget; plan 01-02 wall-clock dominated by Unity batchmode cold-start latency, not by code authoring.
 
 *Updated after each plan completion*
+| Phase 01-project-bootstrap-empty-warehouse-scene P02-warehouse-scene-layout | 68min | 4 tasks | 22 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,8 @@ Recent decisions affecting current work:
 - 2026-05-10 (Plan 01-01): Render Graph Compatibility Mode skip — field absent in Unity 6.x; Render Graph mandatory by default. RESEARCH Pitfall 10 outdated for 6.x
 - 2026-05-10 (Plan 01-01): Step E (active build target switch) deferred — `Library/EditorUserBuildSettings.asset` is gitignored/per-user; `BuildScript.BuildIOS` passes `-buildTarget iOS` explicitly
 - 2026-05-10 (Plan 01-01): `Assets/Settings/` template leftover retained — `DefaultVolumeProfile.asset` referenced by URPGlobalSettings; deletion would break URP
+- 2026-05-10 (Phase 1 / Plan 01-02): D-22 NEW — `WM.Editor.Phase01SceneBuilder` kept committed as Editor-only static method + `[MenuItem]`. Headless scene authoring via `-executeMethod` is reproducible across fresh clones; alternative (hand-author 1440-line YAML) rejected as fragile.
+- 2026-05-10 (Phase 1 / Plan 01-02): D-23 NEW — Material URP/Lit verification switched from string-grep to GUID-grep (URP/Lit GUID `933532a4fcc9baf4fa0491de14d08ed7`). Unity serializes shader refs by GUID, not display name; the plan's original grep gate was incorrect. URP/Lit GUID stable across URP 17.x in Unity 6.x.
 
 ### Pending Todos
 
@@ -77,6 +80,7 @@ None yet.
 
 - 2026-05-10: GSD subagents installed via `npx get-shit-done-cc@latest`. Researcher + planner + plan-checker now operate normally.
 - 2026-05-10 (Plan 01-01): Test Framework pin drift — manifest pins `2.0.1-pre.18` but Unity resolved `1.6.0` (builtin). Non-blocking; tests pass on 1.6.0. Pre-release likely not yet published for 6.4 LTS.
+- 2026-05-10 (Plan 01-02): Unity `-runTests` repeatedly flips `ProjectSettings/ProjectSettings.asset` `iOSSupport.m_BuildTargetGraphicsAPIs.m_Automatic` from 0 → 1. Plan 01-01 caught this once (Deviation #5). Recurred at plan 01-02 final verification run; left as-is at SUMMARY-write per system signal. Build path unaffected — `BuildScript.BuildIOS` passes explicit `BuildTarget.iOS` + `BuildTargetGroup.iOS`. Consider a snapshot+restore wrapper in a future infra plan.
 
 ## Deferred Items
 
@@ -84,11 +88,13 @@ None yet.
 |----------|------|--------|-------------|
 | Cleanup | `Assets/Settings/` template leftovers (DefaultVolumeProfile, SampleSceneProfile, Mobile_RPAsset, PC_RPAsset, UniversalRenderPipelineGlobalSettings) — cannot delete without orphaning URP global settings map | Tracked | Plan 01-01 |
 | Build target | Active build target switch (`File > Build Profiles > iOS > Switch Profile`) — per-user, gitignored. User runs on first Editor open | Tracked | Plan 01-01 |
-| Tutorial scene | `Assets/Scenes/SampleScene.unity` (template default) — replaced by `Assets/_Project/Scenes/Warehouse_MVP.unity` in plan 01-02 | Tracked | Plan 01-01 |
+| Tutorial scene | `Assets/Scenes/SampleScene.unity` (template default) — Warehouse_MVP now lives at `Assets/_Project/Scenes/`, and EditorBuildSettings only references the new scene. The SampleScene file itself is still on disk and untouched | Tracked | Plan 01-01 |
+| iOS m_Automatic regression | `ProjectSettings/ProjectSettings.asset` `iOSSupport.m_Automatic` flips 0 → 1 on every `Unity -runTests` invocation. Restored manually in plan 01-01 (#5) and again pre-Task-4 commit in plan 01-02. Left as `1` in the working tree after the final verification run at plan 01-02 close. iOS build path unaffected — `BuildScript.BuildIOS` overrides via explicit `BuildTarget.iOS` | Tracked | Plan 01-02 |
+| Editor scene builder | `Assets/_Project/Scripts/Editor/Phase01SceneBuilder.cs` retained as Editor-only infra (D-22). Idempotent rebuild tool; harmless when not invoked. Phase 11 polish can prune if desired | Tracked | Plan 01-02 |
 
 ## Session Continuity
 
-Last session: 2026-05-10T20:56:48Z
-Stopped at: Plan 01-01 complete — ready to start plan 01-02 (Warehouse_MVP scene composition)
+Last session: 2026-05-10T22:15:00Z
+Stopped at: Plan 01-02 complete — Warehouse_MVP scene + BOOT-02 covered; ready for plan 01-03 (camera + UI canvas)
 Resume command: `/gsd:execute-phase 1`
-Resume file: .planning/phases/01-project-bootstrap-empty-warehouse-scene/01-02-warehouse-scene-layout-PLAN.md
+Resume file: .planning/phases/01-project-bootstrap-empty-warehouse-scene/01-03-camera-and-ui-canvas-PLAN.md
