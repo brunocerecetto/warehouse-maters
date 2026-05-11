@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Phase 01 complete — verifier 18/19 PASS, Editor Play smoke green (GameManager initialized), iOS Xcode project built (build/ios/Unity-iPhone.xcodeproj). Ready for Phase 02.
-last_updated: "2026-05-11T09:39:26.667Z"
-last_activity: 2026-05-11 -- Phase 01 marked complete
+status: "Phase 01 shipped — PR #1 open"
+stopped_at: Phase 01 shipped via PR #1 (https://github.com/brunocerecetto/warehouse-maters/pull/1) — awaiting review/merge
+last_updated: "2026-05-11T09:57:54.662Z"
+last_activity: "2026-05-11 — Phase 01 shipped via PR #1"
 progress:
   total_phases: 11
   completed_phases: 1
   total_plans: 3
   completed_plans: 3
-  percent: 9
+  percent: 100
 ---
 
 # Project State
@@ -27,8 +27,8 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 
 Phase: 01 — COMPLETE
 Plan: 3 of 3 (next: Phase 02 — walk-around-the-warehouse)
-Status: Phase 01 complete
-Last activity: 2026-05-11 -- Phase 01 marked complete
+Status: Phase 01 shipped — PR #1 open
+Last activity: 2026-05-11 — Phase 01 shipped via PR #1
 
 Progress: [██████████] 100%
 
