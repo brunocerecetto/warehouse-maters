@@ -1,0 +1,14 @@
+{
+    "name": "WM.Economy",
+    "rootNamespace": "WM.Economy",
+    "references": ["WM.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

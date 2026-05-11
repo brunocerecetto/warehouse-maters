@@ -4,13 +4,59 @@
 # Local Claude Code / GSD installation (vendored framework + local settings)
 .claude/
 
-# Unity (placeholder — fill in when project is bootstrapped)
-# Library/
-# Temp/
-# Obj/
-# Build/
-# Builds/
-# Logs/
-# UserSettings/
-# *.csproj
-# *.sln
+# Unity (github/gitignore Unity.gitignore)
+.utmp/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+*.log
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/[Aa]ssets/Plugins/Editor/JetBrains*
+*.DotSettings.user
+.vs/
+.vscode/
+.gradle/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+sysinfo.txt
+mono_crash.*
+*.apk
+*.aab
+*.unitypackage
+*.unitypackage.meta
+*.app
+crashlytics-build.properties
+InitTestScene*.unity*
+/ServerData
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+
+# iOS build outputs (BuildScript.BuildIOS)
+/build/
+/build/ios/
+
+# iOS signing artifacts (NEVER commit)
+*.mobileprovision
+*.p12
+*.cer
+*.provisionprofile

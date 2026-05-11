@@ -1,0 +1,14 @@
+{
+    "name": "WM.Analytics",
+    "rootNamespace": "WM.Analytics",
+    "references": ["WM.Core"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

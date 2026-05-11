@@ -1,0 +1,14 @@
+{
+    "name": "WM.Editor",
+    "rootNamespace": "WM.Editor",
+    "references": ["WM.Core", "WM.UI", "Unity.Cinemachine", "Unity.InputSystem", "UnityEngine.UI"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

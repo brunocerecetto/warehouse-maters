@@ -1,0 +1,14 @@
+{
+    "name": "WM.Monetization",
+    "rootNamespace": "WM.Monetization",
+    "references": ["WM.Core", "WM.Analytics"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
