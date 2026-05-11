@@ -3,6 +3,10 @@
     "rootNamespace": "WM.Tests.EditMode",
     "references": [
         "WM.Core",
+        "WM.UI",
+        "Unity.Cinemachine",
+        "Unity.InputSystem",
+        "UnityEngine.UI",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],
